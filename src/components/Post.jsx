@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import { MdDelete, MdOutlineAddReaction } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
+import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import { PostList } from "../store/posts-list-store";
 
 const Post = ({ post }) => {
@@ -20,7 +21,10 @@ const Post = ({ post }) => {
                 ))}
                 <div className="mt-3">
                     <button type="button" className="btn btn-success">
-                        Reactions <MdOutlineAddReaction /> &nbsp;&nbsp;<span className="badge text-bg-danger">{post.reactions}</span>
+                        <AiFillLike /> &nbsp;&nbsp;<span className="badge text-bg-danger">{post.reactions.likes}</span>
+                    </button>&nbsp;&nbsp;
+                    <button type="button" className="btn btn-success">
+                        <AiFillDislike /> &nbsp;&nbsp;<span className="badge text-bg-danger">{post.reactions.dislikes}</span>
                     </button>
                 </div>
             </div>
